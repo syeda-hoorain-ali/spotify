@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Playlists</title>
+</head>
+<body>
+    <h1>Music Playlists</h1>
+
+    <div id="playlists"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to display playlists
+            function displayPlaylists(playlists) {
+                const playlistsContainer = document.getElementById('playlists');
+                
+                playlists.forEach(playlist => {
+                    const playlistDiv = document.createElement('div');
+                    playlistDiv.innerHTML = `
+                        <h2>${playlist.title}</h2>
+                        <p>${playlist.description}</p>
+                        <img src="${playlist.cover}" alt="${playlist.title} Cover" style="max-width: 200px;">
+                        <hr>
+                    `;
+                    playlistsContainer.appendChild(playlistDiv);
+                });
+            }
+
+            // Fetch playlists
+            function fetchPlaylists() {
+                fetch('./api.json') // Replace with the actual API endpoint
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        displayPlaylists(data);
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+
+            // Fetch playlists when the page loads
+            fetchPlaylists();
+        });
+    </script>
+</body>
+</html>
