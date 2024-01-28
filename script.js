@@ -30,7 +30,7 @@ function secToMin(seconds) {
 
 async function getSongs(folder) {
     currentFolder = folder;
-    let a = await fetch(`https://syeda-hoorain-ali.github.io/spotify/${folder}`);
+    let a = await fetch(`https://syeda-hoorain-ali.github.io/spotify/songs/${folder}`);
     let response = await a.text();
 
     let div = document.createElement("div");
