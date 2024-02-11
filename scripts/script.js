@@ -6,7 +6,7 @@ let wow;
 
 let songInfo = document.querySelector('.song-info');
 let songTime = document.querySelector('.song-time');
-let volumeIcon = document.querySelector('.song-volume i');
+let volumeIcon = document.querySelector('.song-volume img');
 let cardContainer = document.querySelector('.card-container');
 
 
@@ -30,19 +30,16 @@ function secToMin(seconds) {
 
 async function getSongs(folder) {
     currentFolder = folder;
-    let a = await fetch(`http://127.0.0.1:5500/songs/${folder}`);
-    let response = await a.text();
-
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
+    let a = await fetch(`./songs/${folder}/api.json`);
+    let response = await a.json();
 
     songs = [];
 
-    for (let i = 0; i < as.length; i++) {
-        const element = as[i];
-        if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`/${folder}/`)[1])
+    for (let i = 0; i < response.length; i++) {
+        const element = response[i];
+
+        if (element.endsWith('.mp3')) {
+            songs.push(element)
         }
     }
 
@@ -53,12 +50,12 @@ async function getSongs(folder) {
     function showSongs() {
         for (const song of songs) {
             songUl.innerHTML = songUl.innerHTML + `<li>
-            <i class="fa-solid fa-music"></i>
+            <img src="./assets/svg/music.svg" alt="Music" data-type="svg">
             <div class="info">
                 <div class="name">${song.replaceAll('%20', ' ').split('.mp3')[0]}</div>
                 <div class="">Song Artist</div>
             </div>
-            <i class="fa-solid fa-circle-play"></i>
+            <img src="./assets/svg/circle-play.svg" class="play" alt="Play" data-type="svg">
         </li>`
         }
     };
@@ -101,7 +98,7 @@ async function displayAlbums() {
    //* Get the metadata of folders
 
 
-    fetch('./api.json') 
+    fetch('./scripts/api.json') 
         .then(response => response.json())
         .then(data => {
             data.forEach((e) => {
@@ -109,7 +106,7 @@ async function displayAlbums() {
                     <img src="${e.cover}" alt="${e.title}" title="${e.title}">
                     <h3>${e.title}</h3>
                     <p>${e.description}</p>
-                    <div class="play"><i class="fa-solid fa-play"></i></div>
+                    <div class="play"><img src="./assets/svg/play.svg" alt="Play" data-type="svg"></div>
                 </div>`;
 
                 //* Load the playlist whenever card is clicked
@@ -147,11 +144,14 @@ async function main() {
     play.addEventListener('click', () => {
         if (currentSong.paused) {
             currentSong.play();
-            play.classList.replace('fa-circle-play', 'fa-circle-pause');
+            play.src.replace('circle-play', 'pause');
+            console.log(play.src.replace('circle-play', 'pause'));
         } else {
             currentSong.pause();
-            play.classList.replace('fa-circle-pause', 'fa-circle-play');
+            play.src.replace('pause', 'circle-play');
+            console.log(play.src.replace('pause', 'circle-play'));
         }
+        
     });
 
 
@@ -258,6 +258,70 @@ document.querySelector('.fa-xmark').addEventListener('click', () => {
 function loader() {
     document.getElementById('loader').style.display = 'none';
 }
+
+
+
+
+
+
+
+
+async function wowsss() {
+    let a = await fetch('./songs/soulfulDinner/api.json');
+    let b = await a.json();
+    console.log(b[0]);
+}
+
+
+// wowsss()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

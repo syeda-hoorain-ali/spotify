@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'BlackFont';
-    src: url('./Font/CircularSpotifyText-Bold.otf');
+    src: url('../Font/CircularSpotifyText-Bold.otf');
 }
 
 @font-face {
     font-family: 'LightFont';
-    src: url('./Font/CircularSpotifyText-Light.otf');
+    src: url('../Font/CircularSpotifyText-Light.otf');
 }
 
 * {
@@ -70,6 +70,11 @@ button {
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
+}
+
+img[data-type=svg] {
+    height: 20px;
+    filter: invert();
 }
 
 #loader {
@@ -148,6 +153,11 @@ button {
     justify-items: center;
     gap: 18px;
 }
+
+/* .home ul li a img {
+    height: 20px;
+    filter: invert();
+} */
 
 .home ul li a span {
     margin-top: 5px;
@@ -276,7 +286,7 @@ button {
     color: #999999;
 }
 
-.song-list ul li i.fa-circle-play {
+.song-list ul li img.play {
     margin-left: auto;
     position: relative;
     &:hover {
@@ -509,7 +519,8 @@ button {
 .right .play-bar {
     width: 93.4%;
     padding: 10px 20px;
-    background: rgb(44, 77, 52);
+    /* background: rgb(44, 77, 52); */
+    background: #000000;
     position: absolute;
     top: calc(100% - 50px);
     left: 16px;
@@ -528,7 +539,7 @@ button {
 .right .play-bar .seek-bar {
     width: 97%;
     height: 2px;
-    background-color: #ffffff;
+    background-color: #4d4d4d;
     position: absolute;
     bottom: 0;
     left: 1%;
@@ -539,14 +550,13 @@ button {
     width: 0%;
     height: 3.5px;
     background-color: #1FDF64;
-    border: 0.2px solid black;
 }
 
 .right .play-bar .seek-bar .circle {
     width: 14px;
     aspect-ratio: 1;
     border-radius: 50%;
-    background: #1FDF64;
+    background: #ffffff;
     border: 0.2px solid black;
     position: absolute;
     bottom: -7px;
@@ -566,6 +576,10 @@ button {
     gap: 10px;
     /* background: red; */
     cursor: pointer;
+}
+
+.right .play-bar .song-buttons img:not([alt=Play]) {
+    height: 16px;
 }
 
 .right .play-bar .song-controls {

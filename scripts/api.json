@@ -4,62 +4,62 @@
             "folder_name": "soulfulDinner",
             "title": "Soulful Dinner",
             "description": "Classic and new soul music for the perfect dinner",
-            "cover": "covers/soulful_dinner.jpg"
+            "cover": "assets/covers/soulful_dinner.jpg"
         },
         {
             "id": 2,
             "folder_name": "lofiBeats",
             "title": "Lofi Beats",
             "description": "Chill beats, lofi vibes, new tracks every week...",
-            "cover": "covers/lofi_beats.jpg"
+            "cover": "assets/covers/lofi_beats.jpg"
         },
         {
             "id": 3,
             "folder_name": "chilloutLounge",
             "title": "Chillout Lounge",
             "description": "Just lean back and enjoy relaxed beats.",
-            "cover": "covers/chillout_lounge.jpg"
+            "cover": "assets/covers/chillout_lounge.jpg"
         },
         {
             "id": 4,
             "folder_name": "peacefulPiano",
             "title": "Peaceful Piano",
             "description": "Peaceful piano to help you slow down, breathe, and relax. ",
-            "cover": "covers/peaceful_piano.jpg"
+            "cover": "assets/covers/peaceful_piano.jpg"
         },
         {
             "id": 5,
             "folder_name": "stressRelief",
             "title": "Stress Relief",
             "description": "Calm your mind from anxiety with gentle piano and ambient music.",
-            "cover": "covers/stress_relief.jpg"
+            "cover": "assets/covers/stress_relief.jpg"
         },
         {
             "id": 6,
             "folder_name": "rockClassics",
             "title": "Rock Classics",
             "description": "Rock legends & epic songs that continue to inspire generations.",
-            "cover": "covers/rock_classics.jpg"
+            "cover": "assets/covers/rock_classics.jpg"
         },
         {
             "id": 7,
             "folder_name": "jazzInTheBackground",
             "title": "Jazz in the Background",
             "description": "Soft instrumental Jazz for all your activities.",
-            "cover": "covers/jazz_in_background.jpg"
+            "cover": "assets/covers/jazz_in_background.jpg"
         },
         {
             "id": 8,
             "folder_name": "dinnerWithFriends",
             "title": "Dinner with Friends",
             "description": "The perfect soundtrack to those long nights over dinner",
-            "cover": "covers/dinner_with_friends.jpg"
+            "cover": "assets/covers/dinner_with_friends.jpg"
         },
         {
             "id": 9,
             "folder_name": "beastMode",
             "title": "Beast Mode",
             "description": "Get your beast mode on!",
-            "cover": "covers/beast_mode.jpg"
+            "cover": "assets/covers/beast_mode.jpg"
         }
     ]
